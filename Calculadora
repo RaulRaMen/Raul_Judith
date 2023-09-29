@@ -1,0 +1,89 @@
+
+<?php
+
+//Variables de los operandos que pondra el usuario
+
+$a=0;
+$b=0;
+
+
+// Utilicé un "While" para hacer el bucle
+
+$salir=false;
+
+while ($salir==false) {
+
+    echo "1-Multiplicación\n";
+    echo "2-Suma \n";
+    echo "3-Resta\n";
+    echo "4-Salir\n";
+
+    echo "Elige una opción: ";
+    $i = readline();
+    if($i == 4){
+        break;
+    }
+    echo "Ingrese el primer número: ";
+    $a = readline();
+    echo "Ingrese el segundo número: ";
+    $b = readline();
+
+
+    switch($i)
+    {
+        case 1:
+            multiplicacion();
+            break;
+        case 2:
+            suma($a,$b);
+            break;
+        case 3:
+            resta($a,$b);
+            break;
+
+    }
+
+
+}
+
+
+// La multiplicación utilizando una función y utilizando el global para las variables + un "While" 
+function multiplicacion()
+{
+    global $a,$b;
+    //Variable resultado
+    $res = 0;
+    //Variable contador
+    $cont = 0;
+
+    while($cont<$b){
+
+        $res+=$a;
+        $cont++;
+    }
+
+    echo "El resultado es: $res\n";
+
+}
+
+
+// La suma utilizando una función y utilizando los parámetros
+function suma($a,$b)
+{
+    $res = $a + $b;
+    echo "El resultado es: $res\n";
+}
+
+// La suma utilizando una función y utilizando los parámetros
+function resta($a,$b)
+{
+    $res = $a - $b;
+    echo "El resultado es: $res\n";
+
+}
+
+
+
+
+
+?>
