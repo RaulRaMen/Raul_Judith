@@ -20,6 +20,16 @@
                 <input type="radio"  name="modulo" value="ASIR">
                 <label>ASIR (Administracion de sistemas informaticos y redes)</label>
             </fieldset>
+
+            <fieldset>
+                <label >Que asignaturas quiere convalidar:</label><br>
+                <input type="checkbox" name="DSW" value="DSW">
+                <label > DSW</label><br>
+                <input type="checkbox" name="DEW" value="DEW">
+                <label >DEW</label><br>
+                <input type="checkbox" name="DOR" value="DOR">
+                <label > DOR</label>
+            </fieldset>
         </form>
     </body>
 </html>
