@@ -29,17 +29,17 @@
 
 
     <hr>
-        <label>  Selecciona un idioma: </label>
+        <label>  Selecciona el idioma que hablas: </label>
    
-        <select name="idi">
+            <input type="radio" name="idioma" value="español">
+            <label> Español </label>
+            <input type="radio" name="idioma" value="ingles">
+            <label> Inglés </label>
+            <input type="radio" name="idioma" value="Italiano">
+            <label> Italiano </label>
+            <input type="radio" name="idioma" value="Frances">
+            <label> Francés </label>
 
-        <option>Inglés</option>
-        <option  >Español</option>
-        <option>Italiano</option>
-        <option>Alemán</option>
-        <option>Francés</option>
-        <option>Chino</option>
-        </select>
      </hr>
 
      
@@ -59,10 +59,15 @@
 
         </hr>
 
+        <hr>
+        <label> Selecciona el turno que has estado: </label>
 
+        <label><input type="checkbox" id="cbox1" value="first_checkbox" /> Turno de mañana</label>
+        <input type="checkbox" id="cbox2" value="second_checkbox" />
+        <label for="cbox2">Turno de tarde</label>
 
+        </hr>
 
-   
         </fieldset>
 
         <?php
