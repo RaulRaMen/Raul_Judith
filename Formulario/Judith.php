@@ -1,19 +1,19 @@
 <html>
     <body>
 
-        <form>
-
+        <form action="Recibe_datos.php" method="post">
+            <input type="text" name="origen" value="Judith.php" style="display:none">
         <fieldset>
     <hr>
         <label style=> Nombre : </label>
-        <input type="text" value="Introduce tu nombre" id="nombre"/>
+        <input type="text" value="Introduce tu nombre" name="nombre"/>
         
     </hr> 
 
     
     <hr>
         <label for="mail">  Correo electrónico:  </label>
-        <input type="email" value="Introduce tu correo"  id="mail" name="user_mail" />
+        <input type="email" value="Introduce tu correo"  name="mail" />
     </hr>
 
 
@@ -21,7 +21,7 @@
 
     <hr>
         <label style=> Contraseña : </label>
-        <input type="text" value="Introduce contraseña" id="contraseña"/>
+        <input type="password"  id="contraseña"/>
         
     </hr> 
        
@@ -67,7 +67,13 @@
         <label for="cbox2">Turno de tarde</label>
 
         </hr>
+        <hr>
+        <form method="get" action="Recibe_datos.php">
 
+            <input type="submit" value="Enviar este formulario" />
+
+
+            </hr>
         </fieldset>
 
         <?php
