@@ -1,6 +1,7 @@
 <html>
     <body>
-        <form action="" method="post">
+        <form action="Recibe_datos.php" method="post">
+            <input type="text" name="origen" value="Raul.php" style="display:none">
             <fieldset>
                 <br>
                 <label>Nombre:<label>

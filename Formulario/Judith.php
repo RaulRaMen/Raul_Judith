@@ -2,7 +2,7 @@
     <body>
 
         <form action="Recibe_datos.php" method="post">
-
+            <input type="text" name="origen" value="Judith.php" style="display:none">
         <fieldset>
     <hr>
         <label style=> Nombre : </label>
