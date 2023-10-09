@@ -8,5 +8,4 @@
             echo "Has sido judia";
             break;
     }
-?><?php
 ?>
