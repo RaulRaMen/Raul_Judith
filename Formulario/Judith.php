@@ -6,14 +6,14 @@
         <fieldset>
     <hr>
         <label style=> Nombre : </label>
-        <input type="text" value="Introduce tu nombre" id="nombre"/>
+        <input type="text" value="Introduce tu nombre" name="nombre"/>
         
     </hr> 
 
     
     <hr>
         <label for="mail">  Correo electrónico:  </label>
-        <input type="email" value="Introduce tu correo"  id="mail" name="user_mail" />
+        <input type="email" value="Introduce tu correo"  name="mail" />
     </hr>
 
 
