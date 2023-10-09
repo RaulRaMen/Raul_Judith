@@ -13,22 +13,32 @@
 
             <fieldset>
                 <label >Elija su modulo:</label><br>
-                <input type="radio" name="modulo" value="DAW">
-                <label>DAW (Desarrollo de aplicaciones web)</label><br>
-                <input type="radio"  name="modulo" value="DAM">
-                <label>DAM (Desarrollo de aplicaciones multiplataforma)</label><br>
-                <input type="radio"  name="modulo" value="ASIR">
-                <label>ASIR (Administracion de sistemas informaticos y redes)</label>
+                <input type="radio" name="modulo" value="DAW">DAW (Desarrollo de aplicaciones web)</input><br>
+                <input type="radio"  name="modulo" value="DAM">DAM (Desarrollo de aplicaciones multiplataforma)</input><br>
+                <input type="radio"  name="modulo" value="ASIR">ASIR (Administracion de sistemas informaticos y redes)</input>
             </fieldset>
 
             <fieldset>
                 <label >Que asignaturas quiere convalidar:</label><br>
-                <input type="checkbox" name="DSW" value="DSW">
-                <label > DSW</label><br>
-                <input type="checkbox" name="DEW" value="DEW">
-                <label >DEW</label><br>
-                <input type="checkbox" name="DOR" value="DOR">
-                <label > DOR</label>
+                <input type="checkbox" name="convalidar[]" value="DSW">DSW</input><br>
+                <input type="checkbox" name="convalidar[]" value="DEW">DEW</input><br>
+                <input type="checkbox" name="convalidar[]" value="DOR">DOR</input><br>
+                <input type="checkbox" name="convalidar[]" value="EMR">EMR</input><br>
+                <input type="checkbox" name="convalidar[]" value="DPL">DPL</input>
+            </fieldset>
+
+            <fieldset>
+                <label >Otros estudios cursados:</label><br>
+                <select name="estudios[]" multiple>
+                <option value="DAW" selected="selected">DAW</option>
+                <option value="DAM">DAM</option>
+                <option value="ASIR">ASIR</option>
+                </select> <br>
+            </fieldset>
+
+            <fieldset style="text-align:center">
+            
+                <input type="submit" value="Mandar">
             </fieldset>
         </form>
     </body>
