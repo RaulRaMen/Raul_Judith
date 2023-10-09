@@ -1,7 +1,7 @@
 <html>
     <body>
 
-        <form>
+        <form action="Recibe_datos.php" method="post">
 
         <fieldset>
     <hr>
@@ -21,7 +21,7 @@
 
     <hr>
         <label style=> Contraseña : </label>
-        <input type="text" value="Introduce contraseña" id="contraseña"/>
+        <input type="password"  id="contraseña"/>
         
     </hr> 
        
@@ -67,7 +67,13 @@
         <label for="cbox2">Turno de tarde</label>
 
         </hr>
+        <hr>
+        <form method="get" action="Recibe_datos.php">
 
+            <input type="submit" value="Enviar este formulario" />
+
+
+            </hr>
         </fieldset>
 
         <?php
