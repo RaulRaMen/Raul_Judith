@@ -2,7 +2,8 @@
 
 
 
-echo $_POST['nombre'];
+
+
 
 
 
