@@ -62,8 +62,9 @@
         <hr>
         <label> Selecciona el turno que has estado: </label>
 
-        <label><input type="checkbox" id="cbox1" value="first_checkbox" /> Turno de mañana</label>
-        <input type="checkbox" id="cbox2" value="second_checkbox" />
+        <label>
+        <input type="checkbox" name="turno[]" value="mañana" /> Turno de mañana</label>
+        <input type="checkbox" name="turno[]" id="cbox2" value="tarde" />
         <label for="cbox2">Turno de tarde</label>
 
         </hr>
