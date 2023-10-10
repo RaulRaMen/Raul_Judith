@@ -1,5 +1,5 @@
 <?php
-    $errores;
+    $errores = array();
     $tieneNumeros = "/.?[0-9].?/";
     $esContraseña="/.?[A-Z].?/";
     
@@ -53,16 +53,11 @@
         if(soloLetras('sApellido'))
             $errores[] = "El segundo apellido solo debe incluir letras";
 
-        //Elejir modulo
-        
         //Elejir convalidacion
         if(comprobarConvalidacion($_POST['modulo']))
             $errores[] = "Debe modificar las convalidaciones";
 
-        print_r($errores);
-
-        
-        
+        visualizacionErrores();
     }
 
 
@@ -82,7 +77,7 @@
 
         
 
-        print_r($errores);
+        visualizacionErrores();
     }
 
 
@@ -101,5 +96,21 @@
         
     }
 
+    function visualizacionErrores()
+    {
+        global $errores;
 
+        if(count($errores) == 0)
+            echo "No hubo ningun fallo, very good manueh";
+        else{
+            $i = 1;
+            echo "HAZ FALLADO, los fallos son:<br>";
+
+            foreach($errores as &$salida){
+                echo $i."- ".$salida."<br>";
+                $i++;
+            }
+            echo "Si quieres volver al formulario pincha => <a href=".$_POST['origen'].">AQUI</a>";
+        }
+    }
 ?>
