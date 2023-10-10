@@ -40,6 +40,7 @@
             {
                 if(!in_array($asignatura, $modulo[$_POST['modulo']]))
                     $errores[] = "La asignatura " .$asignatura." no pertenece al modulo ".$_POST['modulo'];
+                
             }
 
         }
@@ -54,9 +55,12 @@
             $errores[] = "El segundo apellido solo debe incluir letras";
 
         //Elejir convalidacion
-        if(comprobarConvalidacion($_POST['modulo']))
-            $errores[] = "Debe modificar las convalidaciones";
+        if(isset($_POST['convalidar'][0]))
+            comprobarConvalidacion($_POST['modulo']);
 
+        //Otros estudios
+        if(!elegirUno('estudios'))
+            $errores[] = "Debes seleccionar un tipo de estudios";
         visualizacionErrores();
     }
 
@@ -89,17 +93,13 @@
 
 
     function elegirUno($name)
-    {
-        
+    {   
         if(empty($_POST[$name])){
         return false;
         }
         else{
-
             return true;
-
         }
-        
     }
 
     function visualizacionErrores()
