@@ -23,6 +23,7 @@
     {
         global $errores,$tieneNumeros;
 
+        //Campo nombre
         if(soloLetras('nombre'))
             $errores[] = "El nombre solo debe incluir letras";
         if(soloLetras('pApellido'))
@@ -30,7 +31,8 @@
         if(soloLetras('sApellido'))
             $errores[] = "El segundo apellido solo debe incluir letras";
 
-
+        //Elejir modulo
+        
         print_r($errores);
     }
 ?>
