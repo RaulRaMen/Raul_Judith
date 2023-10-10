@@ -22,9 +22,28 @@
         return preg_match($tieneNumeros,$_POST[$name]);
     }
 
+
     function validacionRaul()
     {
         global $errores,$tieneNumeros;
+
+        //Funciones locales
+        function comprobarConvalidacion($modulo)
+        {
+            global $errores;
+            $modulo = array( "DAW" => array("DSW","DEW","DOR","EMR","DPL"),
+                            "DAM" => array("EMR","","","",""),
+                            "ASIR" => array("EMR","DPL","","","")
+            );
+
+            foreach($_POST['convalidar'] as &$asignatura)
+            {
+                if(!in_array($asignatura, $modulo[$_POST['modulo']]))
+                    $errores[] = "La asignatura " .$asignatura." no pertenece al modulo ".$_POST['modulo'];
+            }
+
+        }
+        
 
         //Campo nombre
         if(soloLetras('nombre'))
@@ -36,13 +55,15 @@
 
         //Elejir modulo
         
+        //Elejir convalidacion
+        if(comprobarConvalidacion($_POST['modulo']))
+            $errores[] = "Debe modificar las convalidaciones";
+
         print_r($errores);
+
+        
+        
     }
-
-
-
-
-
 
 
     function validacionJudith()

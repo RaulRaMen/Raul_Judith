@@ -14,7 +14,7 @@
 
             <fieldset>
                 <label >Elija su modulo:</label><br>
-                <input type="radio" name="modulo" value="DAW">DAW (Desarrollo de aplicaciones web)</input><br>
+                <input type="radio" name="modulo" value="DAW" checked>DAW (Desarrollo de aplicaciones web)</input><br>
                 <input type="radio"  name="modulo" value="DAM">DAM (Desarrollo de aplicaciones multiplataforma)</input><br>
                 <input type="radio"  name="modulo" value="ASIR">ASIR (Administracion de sistemas informaticos y redes)</input>
             </fieldset>
