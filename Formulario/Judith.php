@@ -21,7 +21,7 @@
 
     <hr>
         <label style=> Contraseña : </label>
-        <input type="password"  id="contraseña"/>
+        <input type="password"  name="contraseña"/>
         
     </hr> 
        
