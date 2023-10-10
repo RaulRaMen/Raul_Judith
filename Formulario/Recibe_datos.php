@@ -64,9 +64,12 @@
 
 
 
-    function elegirUno($modulo)
+    function elegirUno()
     {
       
+        
+
+        
     }
 
 

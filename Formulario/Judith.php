@@ -47,9 +47,9 @@
         <hr>
         
         <label>  Selecciona los módulos que has cursado </label>
-        <select name="modulo" id="modulo" multiple>
+        <select name="modulo[]" id="modulo" multiple>
       
-        <option selected>1º de Daw</option>
+        <option >1º de Daw</option>
         <option  >1º de ASIR </option>
         <option>2º de DAW</option>
         <option>2º de ASIR</option>
@@ -62,7 +62,7 @@
         <hr>
         <label> Selecciona el turno que has estado: </label>
 
-        <label><input type="checkbox" id="cbox1" value="first_checkbox" checked/> Turno de mañana</label>
+        <label><input type="checkbox" id="cbox1" value="first_checkbox" /> Turno de mañana</label>
         <input type="checkbox" id="cbox2" value="second_checkbox" />
         <label for="cbox2">Turno de tarde</label>
 
