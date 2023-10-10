@@ -47,7 +47,7 @@
         <hr>
         
         <label>  Selecciona los módulos que has cursado </label>
-        <select name="modulo[]" id="modulo" multiple>
+        <select multiple name="modulo[]" >
       
         <option >1º de Daw</option>
         <option  >1º de ASIR </option>

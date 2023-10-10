@@ -77,8 +77,8 @@
         $errores[] = "El correo tiene que ser válido";
         if(!preg_match($esContraseña,$_POST['contraseña']))
         $errores[] = "La contraseña tiene que tener almenos una mayuscula";
-        
-
+        if(!elegirUno($_POST['modulo']))
+        $errores[] = "Debes seleccionar un módulo que has cursado";
 
         
 
@@ -87,11 +87,17 @@
 
 
 
-    function elegirUno()
+    function elegirUno($name)
     {
-      
         
+        if(count($name)==0){
+        return false;
+        }
+        else{
 
+            return true;
+
+        }
         
     }
 
