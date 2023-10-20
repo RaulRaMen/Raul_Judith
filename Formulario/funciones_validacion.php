@@ -46,6 +46,12 @@
         if(!elegirUno('estudios'))
             $errores[] = "Debes seleccionar un tipo de estudios";
         visualizacionErrores();
+
+        
+
+
+
+
     }
 
     function validacionJudith()
@@ -67,6 +73,25 @@
         echo isset($_POST['turno'][1]);
 
         visualizacionErrores();
+
+
+        //Resultado Formulario
+        echo" <br> //////////////////////////////////////////////////////////////////////";
+        echo" <br> Nombre : ".$_POST['nombre'];
+        echo"<br> Correo : ".$_POST['mail'];
+        echo"<br> Contraseña : ".$_POST['contraseña'];
+        echo "<br> Idioma : ".$_POST['idioma'];
+        echo(" <br>Módulo:");
+        if(isset($_POST['modulo'][0]) )
+        
+            echo print_r($_POST['modulo']);
+
+
+        if(isset($_POST['turno'][0])) 
+         echo"Turno : " .$_POST['turno'];
+        
+       
+        
     }
 
     function elegirUno($name)
@@ -96,4 +121,11 @@
             echo "Si quieres volver al formulario pincha => <a href=".$_POST['origen'].">AQUI</a>";
         }
     }
+
+
+
+
+
+
+
 ?>

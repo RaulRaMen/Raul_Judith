@@ -49,10 +49,10 @@
         <label>  Selecciona los módulos que has cursado </label>
         <select multiple name="modulo[]" >
       
-        <option >1º de Daw</option>
-        <option  >1º de ASIR </option>
-        <option>2º de DAW</option>
-        <option>2º de ASIR</option>
+        <option value="1daw">1º de Daw</option>
+        <option value="1asir" >1º de ASIR </option>
+        <option value="2daw">2º de DAW</option>
+        <option value="2asir">2º de ASIR</option>
    
     
         </select>
