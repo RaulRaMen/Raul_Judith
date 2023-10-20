@@ -57,10 +57,10 @@
         <label>  Selecciona los módulos que has cursado </label>
         <select multiple name="modulo[]" >
       
-        <option <?php if(in_array("1daw",$porDefecto["Modulo"])) echo("selected") ?>>1º de Daw</option>
-        <option <?php if(in_array("1asir",$porDefecto["Modulo"])) echo("selected") ?>>1º de ASIR </option>
-        <option <?php if(in_array("2daw",$porDefecto["Modulo"])) echo("selected") ?>>2º de DAW</option>
-        <option <?php if(in_array("2asir",$porDefecto["Modulo"])) echo("selected") ?>>2º de ASIR</option>
+        <option value="1daw"<?php if(in_array("1daw",$porDefecto["Modulo"])) echo("selected") ?>>1º de Daw</option>
+        <option value="1asir"<?php if(in_array("1asir",$porDefecto["Modulo"])) echo("selected") ?>>1º de ASIR </option>
+        <option value="2daw" <?php if(in_array("2daw",$porDefecto["Modulo"])) echo("selected") ?>>2º de DAW</option>
+        <option value="2asir" <?php if(in_array("2asir",$porDefecto["Modulo"])) echo("selected") ?>>2º de ASIR</option>
     
         </select>
 
