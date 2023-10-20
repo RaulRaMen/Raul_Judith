@@ -87,10 +87,9 @@
         if(isset($_POST['modulo'][0]) )
         
             echo print_r($_POST['modulo']);
-
-
+        echo" <br>Turno : ";
         if(isset($_POST['turno'][0])) 
-         echo"Turno : " .$_POST['turno'];
+            echo print_r($_POST['turno']);
         
        
         
