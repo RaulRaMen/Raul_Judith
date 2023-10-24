@@ -46,14 +46,6 @@
         if(!elegirUno('estudios'))
             $errores[] = "Debes seleccionar un tipo de estudios";
         visualizacionErrores();
-
-        
-
-
-
-
-
-        
     }
 
     function validacionJudith()
