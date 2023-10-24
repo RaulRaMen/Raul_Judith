@@ -1,5 +1,22 @@
 <html>
     <?php
+
+   
+$uploads_dir = '/ficheros';
+
+if (isset($_FILES["archivosubido"]) && is_array($_FILES["archivosubido"])) {
+    foreach ($_FILES["archivosubido"]["error"] as $key => $error) {
+        if ($error == UPLOAD_ERR_OK) {
+            $tmp_name = $_FILES["archivosubido"]["tmp_name"][$key];
+            $name = $uploads_dir.basename($_FILES["archivosubido"]["name"][$key]);
+         
+        }
+    }
+}
+
+
+
+
         $porDefecto = array("Nombre"=>"Juan ",
                             "Correo" => "ejemplo@hotmail.com ",
                             "Contraseña" => "Secreto ",
@@ -75,6 +92,27 @@
         <label for="cbox2">Turno de tarde</label>
 
         </hr>
+
+       
+
+        <hr> 
+
+       
+        
+    
+        Sube un fichero:
+   
+            <input type="file" name="archivosubido[]">
+
+           
+
+           
+
+        </hr>
+
+   
+
+      
         <hr>
 
             <input type="submit" value="Enviar este formulario" />
