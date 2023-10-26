@@ -16,13 +16,25 @@ if (isset($_FILES["archivosubido"]) && is_array($_FILES["archivosubido"])) {
 
 
 
-
-        $porDefecto = array("Nombre"=>"Juan ",
-                            "Correo" => "ejemplo@hotmail.com ",
-                            "Contraseña" => "Secreto ",
-                            "Idioma" => "ingles",
-                            "Modulo" => array("1asir","2asir"),
-                            "Turno" => array("mañana","tarde"))
+        $campos = array("Nombre","Correo","Contraseña","Idioma","Modulo","Turno");
+        $porDefecto = array("Nombre"=>"",
+                            "Correo" =>"" ,
+                            "Contraseña" => "",
+                            "Idioma" => "",
+                            "Modulo" => array(),
+                            "Turno" => array());
+        $i=0;
+        $file = fopen("JudithCargarFichero.txt","r");
+        while($i<=5){
+            $linea=fgets($file);
+            if($i>=4)
+                $porDefecto[$campos[$i]]= explode(",", trim($linea));
+            
+            else
+                $porDefecto[$campos[$i]]=trim($linea);
+            $i++;
+        }
+        fclose($file);
     ?>
     <body>
 
@@ -31,14 +43,14 @@ if (isset($_FILES["archivosubido"]) && is_array($_FILES["archivosubido"])) {
         <fieldset>
     <hr>
         <label style=> Nombre : </label>
-        <input type="text" name="nombre"<?php echo('value='.$porDefecto["Nombre"])?>/>
+        <input type="text" name="nombre"<?php echo('value="'.$porDefecto["Nombre"]).'"'?>/>
         
     </hr> 
 
     
     <hr>
         <label for="mail">  Correo electrónico:  </label>
-        <input type="email" name="mail" <?php echo('value='.$porDefecto["Correo"])?>/>
+        <input type="email" name="mail" <?php echo('value="'.$porDefecto["Correo"]).'"'?>/>
     </hr>
 
 
@@ -46,7 +58,7 @@ if (isset($_FILES["archivosubido"]) && is_array($_FILES["archivosubido"])) {
 
     <hr>
         <label > Contraseña : </label>
-        <input type="text"  name="contraseña" <?php echo('value='.$porDefecto["Contraseña"])?>/>
+        <input type="text"  name="contraseña" <?php echo('value="'.$porDefecto["Contraseña"]).'"'?>/>
         
     </hr> 
        
