@@ -45,13 +45,11 @@
         //Otros estudios
         if(!elegirUno('estudios'))
             $errores[] = "Debes seleccionar un tipo de estudios";
+
+        if(!subirFichero())
+            $errores[] = "No se pudo subir el fichero";
+
         visualizacionErrores();
-
-        
-
-
-
-
 
         
     }
@@ -61,19 +59,19 @@
         global $errores,$tieneNumeros,$esContraseña,$esCorreo;
 
         if(soloLetras('nombre'))
-        $errores[] = "El nombre solo debe incluir letras";
+            $errores[] = "El nombre solo debe incluir letras";
         if(!preg_match($esCorreo,$_POST['mail']))
-        $errores[] = "El correo tiene que ser válido";
+            $errores[] = "El correo tiene que ser válido";
         if(!preg_match($esContraseña,$_POST['contraseña']))
-        $errores[] = "La contraseña tiene que tener almenos una mayuscula";
+            $errores[] = "La contraseña tiene que tener almenos una mayuscula";
         if(!elegirUno('modulo'))
-        $errores[] = "Debes seleccionar un módulo que has cursado";
+            $errores[] = "Debes seleccionar un módulo que has cursado";
         if(!elegirUno('turno'))
-        $errores[] = "Debes seleccionar un turno";
+            $errores[] = "Debes seleccionar un turno";
         if(elegirUno('turno')&& isset($_POST['turno'][1]))
-        $errores[] = "Debes seleccionar solo un turno";
+            $errores[] = "Debes seleccionar solo un turno";
         echo isset($_POST['turno'][1]);
-
+        
         visualizacionErrores();
 
 
@@ -123,10 +121,19 @@
         }
     }
 
-
-
-
-
-
-
+    function subirFichero()
+    {
+        $dir_fichero='./ficheros';
+        if(isset($_FILES["fichero"])){
+            
+            if($_FILES["fichero"]["error"]==UPLOAD_ERR_OK){
+                $tmp_name = $_FILES["fichero"]["tmp_name"];
+                $name = basename($_FILES["fichero"]["name"]);
+                
+                move_uploaded_file($tmp_name,"$dir_fichero/$name");
+                return true;
+            }
+        }
+        return false;
+    }
 ?>

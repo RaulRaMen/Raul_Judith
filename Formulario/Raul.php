@@ -8,7 +8,7 @@
                                 "Convalidacion" => array("DSW","EMR"),
                                 "Cursados" => array("ASIR","DAM"))
         ?>
-        <form action="Recibe_datos.php" method="post">
+        <form action="Recibe_datos.php" method="post" enctype="multipart/form-data">
             <input type="text" name="origen" value="Raul.php" style="display:none">
             <fieldset>
                 <br>
@@ -47,7 +47,10 @@
             </fieldset>
 
             <fieldset style="text-align:center">
-            
+                <input type="file" name="fichero" >
+            </fieldset>
+
+            <fieldset style="text-align:center">
                 <input type="submit" value="Enviar">
             </fieldset>
         </form>
