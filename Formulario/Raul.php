@@ -1,23 +1,36 @@
 <html>
     <body>
         <?php
-            $porDefecto = array("Nombre"=>"Juan",
-                                "PApellido" => "Martin",
-                                "SApellido" => "Martin",
-                                "Modulo" => "ASIR",
-                                "Convalidacion" => array("DSW","EMR"),
-                                "Cursados" => array("ASIR","DAM"))
+            $campos=array("Nombre","PApellido","SApellido", "Modulo","Convalidacion","Cursados");
+            $porDefecto = array("Nombre"=>"",
+                                "PApellido" => "",
+                                "SApellido" => "",
+                                "Modulo" => "",
+                                "Convalidacion" => array(),
+                                "Cursados" => array());
+            $i=0;
+            $file = fopen("RaulCargarFichero.txt","r");
+            while($i<=5){
+                $linea=fgets($file);
+                if($i>=4)
+                    $porDefecto[$campos[$i]]= explode(",", trim($linea));
+                
+                else
+                    $porDefecto[$campos[$i]]=trim($linea);
+                $i++;
+            }
+            fclose($file);
         ?>
         <form action="Recibe_datos.php" method="post" enctype="multipart/form-data">
             <input type="text" name="origen" value="Raul.php" style="display:none">
             <fieldset>
                 <br>
                 <label>Nombre:<label>
-                <input type="text" name="nombre" <?php echo('value='.$porDefecto["Nombre"])?> />
+                <input type="text" name="nombre" <?php echo('value="'.$porDefecto["Nombre"].'"')?> />
                 <label>Primer Apellido:<label>
-                <input type="text" name="pApellido" <?php echo('value='.$porDefecto["PApellido"])?> />
+                <input type="text" name="pApellido" <?php echo('value="'.$porDefecto["PApellido"].'"')?> />
                 <label>Segundo Apellido:<label>
-                <input type="text" name="sApellido" <?php echo('value='.$porDefecto["SApellido"])?> /><br><br>
+                <input type="text" name="sApellido" <?php echo('value="'.$porDefecto["SApellido"].'"')?> /><br><br>
             </fieldset>
 
             <fieldset>
