@@ -1,21 +1,5 @@
 <html>
     <?php
-
-   
-$uploads_dir = '/ficheros';
-
-if (isset($_FILES["archivosubido"]) && is_array($_FILES["archivosubido"])) {
-    foreach ($_FILES["archivosubido"]["error"] as $key => $error) {
-        if ($error == UPLOAD_ERR_OK) {
-            $tmp_name = $_FILES["archivosubido"]["tmp_name"][$key];
-            $name = $uploads_dir.basename($_FILES["archivosubido"]["name"][$key]);
-         
-        }
-    }
-}
-
-
-
         $campos = array("Nombre","Correo","Contraseña","Idioma","Modulo","Turno");
         $porDefecto = array("Nombre"=>"",
                             "Correo" =>"" ,
@@ -38,7 +22,7 @@ if (isset($_FILES["archivosubido"]) && is_array($_FILES["archivosubido"])) {
     ?>
     <body>
 
-        <form method="POST" action="Recibe_datos.php" method="post">
+        <form action="Recibe_datos.php" method="post" enctype="multipart/form-data">
             <input type="text" name="origen" value="Judith.php" style="display:none">
         <fieldset>
     <hr>
@@ -114,7 +98,7 @@ if (isset($_FILES["archivosubido"]) && is_array($_FILES["archivosubido"])) {
     
         Sube un fichero:
    
-            <input type="file" name="archivosubido[]">
+            <input type="file" name="archivosubido">
 
            
 

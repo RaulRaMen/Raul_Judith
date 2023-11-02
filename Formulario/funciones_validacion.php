@@ -45,15 +45,10 @@
         //Otros estudios
         if(!elegirUno('estudios'))
             $errores[] = "Debes seleccionar un tipo de estudios";
+        //Fichero
+        if(!subirFichero())
+            $errores[] = "No se subio el fichero";
         visualizacionErrores();
-
-        
-
-
-
-
-
-        
     }
 
     function validacionJudith()
@@ -61,21 +56,22 @@
         global $errores,$tieneNumeros,$esContraseña,$esCorreo;
 
         if(soloLetras('nombre'))
-        $errores[] = "El nombre solo debe incluir letras";
+            $errores[] = "El nombre solo debe incluir letras";
         if(!preg_match($esCorreo,$_POST['mail']))
-        $errores[] = "El correo tiene que ser válido";
+            $errores[] = "El correo tiene que ser válido";
         if(!preg_match($esContraseña,$_POST['contraseña']))
-        $errores[] = "La contraseña tiene que tener almenos una mayuscula";
+            $errores[] = "La contraseña tiene que tener almenos una mayuscula";
         if(!elegirUno('modulo'))
-        $errores[] = "Debes seleccionar un módulo que has cursado";
+            $errores[] = "Debes seleccionar un módulo que has cursado";
         if(!elegirUno('turno'))
-        $errores[] = "Debes seleccionar un turno";
+            $errores[] = "Debes seleccionar un turno";
         if(elegirUno('turno')&& isset($_POST['turno'][1]))
-        $errores[] = "Debes seleccionar solo un turno";
+            $errores[] = "Debes seleccionar solo un turno";
+        if(!subirFichero())
+            $errores[] = "No se subio el fichero";
         echo isset($_POST['turno'][1]);
-
         visualizacionErrores();
-
+        
 
         //Resultado Formulario
         echo" <br> //////////////////////////////////////////////////////////////////////";
@@ -90,8 +86,6 @@
         echo" <br>Turno : ";
         if(isset($_POST['turno'][0])) 
             echo print_r($_POST['turno']);
-        
-       
         
     }
 
@@ -123,10 +117,18 @@
         }
     }
 
-
-
-
-
-
-
+    function subirFichero()
+    {
+        $upload_dir = './ficheros';
+        if (isset($_FILES["archivosubido"])) {
+            
+            if ($_FILES["archivosubido"]["error"] == UPLOAD_ERR_OK) {
+                $tmp_name = $_FILES["archivosubido"]["tmp_name"];
+                $name = basename($_FILES["archivosubido"]["name"]);
+                move_uploaded_file($tmp_name, "$upload_dir/$name");
+                return true;
+            }
+        }
+        return false;
+    }
 ?>
