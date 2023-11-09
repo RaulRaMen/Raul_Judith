@@ -45,20 +45,10 @@
         //Otros estudios
         if(!elegirUno('estudios'))
             $errores[] = "Debes seleccionar un tipo de estudios";
-<<<<<<< HEAD
         //Fichero
         if(!subirFichero())
             $errores[] = "No se subio el fichero";
         visualizacionErrores();
-=======
-
-        if(!subirFichero())
-            $errores[] = "No se pudo subir el fichero";
-
-        visualizacionErrores();
-
-        
->>>>>>> 37d064c2eb35fbafa8396b64e9b49d11bb2b95d1
     }
 
     function validacionJudith()
@@ -77,14 +67,9 @@
             $errores[] = "Debes seleccionar un turno";
         if(elegirUno('turno')&& isset($_POST['turno'][1]))
             $errores[] = "Debes seleccionar solo un turno";
-<<<<<<< HEAD
         if(!subirFichero())
             $errores[] = "No se subio el fichero";
         echo isset($_POST['turno'][1]);
-=======
-        echo isset($_POST['turno'][1]);
-        
->>>>>>> 37d064c2eb35fbafa8396b64e9b49d11bb2b95d1
         visualizacionErrores();
         
 
@@ -134,15 +119,6 @@
 
     function subirFichero()
     {
-<<<<<<< HEAD
-        $upload_dir = './ficheros';
-        if (isset($_FILES["archivosubido"])) {
-            
-            if ($_FILES["archivosubido"]["error"] == UPLOAD_ERR_OK) {
-                $tmp_name = $_FILES["archivosubido"]["tmp_name"];
-                $name = basename($_FILES["archivosubido"]["name"]);
-                move_uploaded_file($tmp_name, "$upload_dir/$name");
-=======
         $dir_fichero='./ficheros';
         if(isset($_FILES["fichero"])){
             
@@ -151,7 +127,6 @@
                 $name = basename($_FILES["fichero"]["name"]);
                 
                 move_uploaded_file($tmp_name,"$dir_fichero/$name");
->>>>>>> 37d064c2eb35fbafa8396b64e9b49d11bb2b95d1
                 return true;
             }
         }

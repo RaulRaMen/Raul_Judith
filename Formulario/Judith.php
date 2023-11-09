@@ -98,7 +98,7 @@
     
         Sube un fichero:
    
-            <input type="file" name="archivosubido">
+            <input type="file" name="fichero">
 
            
 
